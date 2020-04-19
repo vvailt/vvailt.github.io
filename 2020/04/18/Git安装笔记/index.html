@@ -26,7 +26,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -40,21 +40,21 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta name="description" content="Git安装笔记当前系统环境  主机系统：Windows 7-64 虚拟主机系统版本：CentOS Linux release 7.7.1908(Core)  内存：1.8GiB 处理器：intel Core i3-2375M CPU@1.50GHz GNOME版本：3.28.2 OS type：64-bit 虚拟化：VMware 磁盘：19.3 GB 当前用户：vv   两种安装方式：使用yum安">
+  <meta name="description" content="Git安装笔记当前系统环境">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git安装笔记">
 <meta property="og:url" content="https://vvailt.github.io/2020/04/18/Git%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Git安装笔记当前系统环境  主机系统：Windows 7-64 虚拟主机系统版本：CentOS Linux release 7.7.1908(Core)  内存：1.8GiB 处理器：intel Core i3-2375M CPU@1.50GHz GNOME版本：3.28.2 OS type：64-bit 虚拟化：VMware 磁盘：19.3 GB 当前用户：vv   两种安装方式：使用yum安">
+<meta property="og:site_name" content="VVAILT">
+<meta property="og:description" content="Git安装笔记当前系统环境">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-18T14:53:48.000Z">
-<meta property="article:modified_time" content="2020-04-18T15:01:56.236Z">
+<meta property="article:modified_time" content="2020-04-19T10:21:04.669Z">
 <meta property="article:author" content="vvailt">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>Git安装笔记 | Hexo</title>
+  <title>Git安装笔记 | VVAILT</title>
   
 
 
@@ -115,10 +115,11 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">VVAILT</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">vvailt</p>
   </div>
 
   <div class="site-nav-toggle">
@@ -139,14 +140,49 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -155,6 +191,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+
+  <a href="https://github.com/vvailt" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -175,11 +213,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="vvailt">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="Crazy">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="VVAILT">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -192,10 +230,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-18 22:53:48 / 修改时间：23:01:56" itemprop="dateCreated datePublished" datetime="2020-04-18T22:53:48+08:00">2020-04-18</time>
+              <time title="创建时间：2020-04-18 22:53:48" itemprop="dateCreated datePublished" datetime="2020-04-18T22:53:48+08:00">2020-04-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-19 18:21:04" itemprop="dateModified" datetime="2020-04-19T18:21:04+08:00">2020-04-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -208,7 +252,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -220,6 +278,8 @@
 
       
         <h1 id="Git安装笔记"><a href="#Git安装笔记" class="headerlink" title="Git安装笔记"></a>Git安装笔记</h1><p>当前系统环境</p>
+<a id="more"></a>
+
 <blockquote>
 <p>主机系统：Windows 7-64</p>
 <p>虚拟主机系统版本：CentOS Linux release 7.7.1908(Core) </p>
@@ -232,9 +292,7 @@
 <p>当前用户：vv</p>
 </blockquote>
 <hr>
-<h1 id="两种安装方式：使用yum安装和源码安装"><a href="#两种安装方式：使用yum安装和源码安装" class="headerlink" title="两种安装方式：使用yum安装和源码安装"></a>两种安装方式：使用yum安装和源码安装</h1><a id="more"></a>
-
-<h2 id="第一种：使用yum安装Git"><a href="#第一种：使用yum安装Git" class="headerlink" title="第一种：使用yum安装Git"></a>第一种：使用yum安装Git</h2><p>一、首先检查是否安装过Git，输入命令 git –version 如下</p>
+<h1 id="两种安装方式：使用yum安装和源码安装"><a href="#两种安装方式：使用yum安装和源码安装" class="headerlink" title="两种安装方式：使用yum安装和源码安装"></a>两种安装方式：使用yum安装和源码安装</h1><h2 id="第一种：使用yum安装Git"><a href="#第一种：使用yum安装Git" class="headerlink" title="第一种：使用yum安装Git"></a>第一种：使用yum安装Git</h2><p>一、首先检查是否安装过Git，输入命令 git –version 如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[vv@localhost ~]$ git --version</span><br><span class="line">bash: git: 未找到命令 ...</span><br><span class="line">[vv@localhost ~]$</span><br></pre></td></tr></table></figure>
 
 <p>上面输出为未安装过Git</p>
@@ -275,6 +333,26 @@
     
     
     
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="vvailt 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="vvailt 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -359,7 +437,7 @@
     <img class="site-author-image" itemprop="image" alt="vvailt"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">vvailt</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">Crazy</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -372,15 +450,26 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vvailt" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;vvailt" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:823646789@qq.com" title="E-Mail → mailto:823646789@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
@@ -406,12 +495,17 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">vvailt</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
-  </div>
 
         
 
@@ -447,6 +541,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
